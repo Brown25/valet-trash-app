@@ -11,5 +11,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "prop-types": "^15.8.1",
+    "react-helmet": "^6.1.0"
+  }
 }
