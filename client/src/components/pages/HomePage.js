@@ -1,8 +1,8 @@
 import React from 'react';
-import ErrorBoundary from 'path-to-your-error-boundary-component';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
-import './HomePage.css'; // Assuming you have a CSS file for styling
+import './Homepage.css'; // Assuming you have a CSS file for styling
+import ErrorBoundary from './ErrorBoundary.js'; // Importing the Error Boundary component
 
 const HomePage = React.memo(({ title }) => {
     return (
