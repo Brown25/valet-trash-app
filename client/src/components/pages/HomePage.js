@@ -1,8 +1,10 @@
 import React from 'react';
+
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
-import './Homepage.css'; // Assuming you have a CSS file for styling
-import ErrorBoundary from './ErrorBoundary.js'; // Importing the Error Boundary component
+import './Homepage.css'; 
+import logoImage from '../../static/images/logo.png';
+import ErrorBoundary from './ErrorBoundary.js'; 
 
 const HomePage = React.memo(({ title }) => {
     return (
@@ -13,7 +15,7 @@ const HomePage = React.memo(({ title }) => {
                     <meta name="description" content="Welcome to the Home Page of our Valet Trash App" />
                 </Helmet>
                 <header className="home-page-header">
-                    <img src="path-to-your-logo.png" alt="JunkDog Logo" className="logo" />
+                    <img src={logoImage} alt="JunkDog Logo" className="logo" />
                     <nav>
                         <ul className="navigation">
                             <li><a href="#about">About</a></li>
@@ -24,7 +26,7 @@ const HomePage = React.memo(({ title }) => {
                 </header>
                 <section className="intro">
                     <h1>{title}</h1>
-                    <p>Welcome to the Valet Trash App, your reliable partner in waste management solutions.</p>
+                    <p>Welcome to JunkDog Valet Trash Services! We provide professional and efficient trash removal services, your reliable partner in waste management solutions.</p>
                 </section>
                 {/* Additional sections can be added here */}
             </main>
