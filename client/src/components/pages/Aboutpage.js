@@ -1,11 +1,15 @@
 import React from 'react';
-import './HomePage.css';
+import { Helmet } from 'react-helmet';
 
-AboutPage = () => {
+const AboutPage = () => {
     return (
         <main aria-label="About Page Main Content">
+            <Helmet>
+                <title>About Us</title>
+                <meta name="description" content="Learn more about JunkDog Valet Trash Services." />
+            </Helmet>
             <h1>About Us</h1>
-            <p>Learn more about JunkDog Valet Trash Services, our mission, and our commitment to quality service.</p>
+            <p>At JunkDog Valet Trash Services, we are committed to providing exceptional waste management solutions to our clients.</p>
         </main>
     );
 };

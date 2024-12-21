@@ -1,16 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css'; // Assuming you have some basic styles
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './components/pages/HomePage';
+import Aboutpage from './components/pages/Aboutpage'; 
+import Servicespage from './components/pages/Servicespage'; 
+import Contactpage from './components/pages/Contactpage'; 
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Welcome to Valet Trash App</h1>
-        <p>Your application is running successfully!</p>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <Router>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/services" element={<ServicesPage />} />
+      <Route path="/contact" element={<ContactPage />} />
+    </Routes>
+  </Router>
+);
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);

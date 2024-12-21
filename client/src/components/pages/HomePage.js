@@ -1,12 +1,30 @@
-import React from 'react';
-
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 import './Homepage.css'; 
 import logoImage from '../../static/images/logo.png';
 import ErrorBoundary from './ErrorBoundary.js'; 
 
-const HomePage = React.memo(({ title }) => {
+const HomePage = React.memo(({ title, setCurrPage, toggleLoginModal }) => {
+    const [isMobileView, setIsMobileView] = useState(window.innerWidth < 850);
+    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 665);
+
+    // Function to handle creating a new user
+    const handleCreateUser = () => setCurrPage('newUser');
+
+    // Function to handle login
+    const handleLogin = () => toggleLoginModal();
+
+    // Handle window resize to toggle mobile view and small screen view
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobileView(window.innerWidth < 850);
+            setIsSmallScreen(window.innerWidth <= 665);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
         <ErrorBoundary>
             <main aria-label="Home Page Main Content" className="home-page">
@@ -27,6 +45,8 @@ const HomePage = React.memo(({ title }) => {
                 <section className="intro">
                     <h1>{title}</h1>
                     <p>Welcome to JunkDog Valet Trash Services! We provide professional and efficient trash removal services, your reliable partner in waste management solutions.</p>
+                    <button onClick={handleCreateUser}>Create New User</button>
+                    <button onClick={handleLogin}>Login</button>
                 </section>
                 {/* Additional sections can be added here */}
             </main>
@@ -35,7 +55,9 @@ const HomePage = React.memo(({ title }) => {
 });
 
 HomePage.propTypes = {
-    title: PropTypes.string
+    title: PropTypes.string,
+    setCurrPage: PropTypes.func.isRequired,
+    toggleLoginModal: PropTypes.func.isRequired
 };
 
 export default HomePage;
