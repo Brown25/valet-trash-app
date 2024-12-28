@@ -1,0 +1,38 @@
+.home-page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+.navigation {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav-button:hover {
+    color: #ffa500;
+}
+
+.nav-button:focus {
+    outline: 2px solid #ffa500;
+}

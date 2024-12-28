@@ -1,0 +1,28 @@
+.home-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+@media (max-width: 850px) {
+    .home-page-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navigation {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 665px) {
+    .intro h1 {
+        font-size: 28px;
+    }
+
+    .intro p {
+        font-size: 16px;
+    }
+}

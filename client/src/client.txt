@@ -1,0 +1,43 @@
+.
+├── client.txt
+├── components
+│   ├── App.js
+│   ├── dashboard
+│   │   ├── Dashboard.js
+│   │   ├── TaskDetails.js
+│   │   └── TaskList.js
+│   ├── login
+│   │   ├── LoginModal.js
+│   │   ├── LoginStatus.js
+│   │   └── UserClass.js
+│   ├── pages
+│   │   ├── Aboutpage.js
+│   │   ├── Contactpage.js
+│   │   ├── DashboardPage.js
+│   │   ├── ErrorBoundary.js
+│   │   ├── HomePage.js
+│   │   ├── Homepage.css
+│   │   ├── LoginPage.js
+│   │   ├── Servicespage.js
+│   │   └── SignupPage.js
+│   └── report
+│       ├── ReportForm.js
+│       ├── ReportModal.js
+│       └── ViolationList.js
+├── entry.js
+├── hooks
+│   ├── useTaskManager.js
+│   └── useValidation.js
+├── index.js
+├── static
+│   ├── images
+│   │   ├── logo.png
+│   │   └── trash.png
+│   └── styles
+│       ├── components.scss
+│       └── global.scss
+└── utils
+    ├── api.js
+    └── constants.js
+
+11 directories, 30 files

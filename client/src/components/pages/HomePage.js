@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import PropTypes from 'prop-types';
-import './Homepage.css'; 
+import '../../static/styles/HomePage.css'; 
+import '../../static/styles/Header.css';
+import '../../static/styles/Intro.css';
+import '../../static/styles/Button.css';
 import logoImage from '../../static/images/logo.png';
 
-const HomePage = React.memo(({ title, setCurrPage, toggleLoginModal }) => {
+const HomePage = ({ title, setCurrPage, toggleLoginModal }) => {
     const [isMobileView, setIsMobileView] = useState(window.innerWidth < 850);
     const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 665);
 
-    // Function to handle creating a new user
     const handleCreateUser = () => setCurrPage('newUser');
-
-    // Function to handle login
     const handleLogin = () => toggleLoginModal();
 
-    // Handle window resize to toggle mobile view and small screen view
     useEffect(() => {
         const handleResize = () => {
             setIsMobileView(window.innerWidth < 850);
@@ -34,23 +33,23 @@ const HomePage = React.memo(({ title, setCurrPage, toggleLoginModal }) => {
                 <img src={logoImage} alt="JunkDog Logo" className="logo" />
                 <nav>
                     <ul className="navigation">
-                        <li><button className="nav-button" onClick={() => window.location.href = '#home'}>Home</button></li>
-                        <li><button className="nav-button" onClick={() => window.location.href = '#about'}>About</button></li>
-                        <li><button className="nav-button" onClick={() => window.location.href = '#services'}>Services</button></li>
-                        <li><button className="nav-button" onClick={() => window.location.href = '#contact'}>Contact</button></li>
+                        <li><button className="nav-button" onClick={() => setCurrPage('home')}>Home</button></li>
+                        <li><button className="nav-button" onClick={() => setCurrPage('about')}>About</button></li>
+                        <li><button className="nav-button" onClick={() => setCurrPage('services')}>Services</button></li>
+                        <li><button className="nav-button" onClick={() => setCurrPage('contact')}>Contact</button></li>
                     </ul>
                 </nav>
             </header>
+            
             <section className="intro">
                 <h1>{title}</h1>
                 <p>Welcome to JunkDog Valet Trash Services! We provide professional and efficient trash removal services, your reliable partner in waste management solutions.</p>
-                <button onClick={handleCreateUser}>Create New User</button>
-                <button onClick={handleLogin}>Login</button>
+                <button className="button" onClick={handleCreateUser}>Create New User</button>
+                <button className="button" onClick={handleLogin}>Login</button>
             </section>
-            {/* Additional sections can be added here */}
         </main>
     );
-});
+};
 
 HomePage.propTypes = {
     title: PropTypes.string,
