@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import PropTypes from 'prop-types';
 import '../../static/styles/HomePage.css'; 
@@ -7,11 +8,12 @@ import '../../static/styles/Intro.css';
 import '../../static/styles/Button.css';
 import logoImage from '../../static/images/logo.png';
 
-const HomePage = ({ title, setCurrPage, toggleLoginModal }) => {
+const HomePage = ({ title, toggleLoginModal }) => {
     const [isMobileView, setIsMobileView] = useState(window.innerWidth < 850);
     const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 665);
+    const navigate = useNavigate(); // Initialize useNavigate
 
-    const handleCreateUser = () => setCurrPage('newUser');
+    const handleCreateUser = () => navigate('/signup');
     const handleLogin = () => toggleLoginModal();
 
     useEffect(() => {
@@ -33,10 +35,10 @@ const HomePage = ({ title, setCurrPage, toggleLoginModal }) => {
                 <img src={logoImage} alt="JunkDog Logo" className="logo" />
                 <nav>
                     <ul className="navigation">
-                        <li><button className="nav-button" onClick={() => setCurrPage('home')}>Home</button></li>
-                        <li><button className="nav-button" onClick={() => setCurrPage('about')}>About</button></li>
-                        <li><button className="nav-button" onClick={() => setCurrPage('services')}>Services</button></li>
-                        <li><button className="nav-button" onClick={() => setCurrPage('contact')}>Contact</button></li>
+                        <li><button className="nav-button" onClick={() => navigate('/')}>Home</button></li>
+                        <li><button className="nav-button" onClick={() => navigate('/about')}>About</button></li>
+                        <li><button className="nav-button" onClick={() => navigate('/services')}>Services</button></li>
+                        <li><button className="nav-button" onClick={() => navigate('/contact')}>Contact</button></li>
                     </ul>
                 </nav>
             </header>
@@ -53,7 +55,6 @@ const HomePage = ({ title, setCurrPage, toggleLoginModal }) => {
 
 HomePage.propTypes = {
     title: PropTypes.string,
-    setCurrPage: PropTypes.func.isRequired,
     toggleLoginModal: PropTypes.func.isRequired
 };
 

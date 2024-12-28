@@ -1,19 +1,15 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AboutPage from './pages/AboutPage'; // Import AboutPage
-import ServicesPage from './pages/ServicesPage';
-import ContactPage from './pages/ContactPage';
-import Page from './Page'; 
+import { Routes, Route } from 'react-router-dom';
+import Header from './Header';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ServicesPage from './pages/Servicespage';
+import ContactPage from './pages/Contactpage';
+import SignupPage from './pages/SignupPage';
 
-/**
- * The main component of the application.
- * The root component that sets up the application’s routing, context providers (if any), and the general layout.
- * @returns {JSX.Element} The rendered component.
- */
 const App = () => {
-    // Snackbar functionality or any global methods
     const setCurrPage = (page) => {
-        console.log(`Current page set to: ${page}`);
+        console.log(`Navigating to page: ${page}`);
     };
 
     const toggleLoginModal = () => {
@@ -21,23 +17,16 @@ const App = () => {
     };
 
     return (
-        <Router>
+        <>
+            <Header />
             <Routes>
-                <Route
-                    path="/"
-                    element={
-                        <Page
-                            title="Welcome to JunkDog Valet Trash Services"
-                            setCurrPage={setCurrPage}
-                            toggleLoginModal={toggleLoginModal}
-                        />
-                    }
-                />
+                <Route path="/" element={<HomePage setCurrPage={setCurrPage} toggleLoginModal={toggleLoginModal} />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/services" element={<ServicesPage />} />
                 <Route path="/contact" element={<ContactPage />} />
+                <Route path="/signup" element={<SignupPage />} />
             </Routes>
-        </Router>
+        </>
     );
 };
 
