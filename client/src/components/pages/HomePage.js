@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet-async'; 
+import { useNavigate } from 'react-router-dom';
+//import  useNavigate  from 'react-router-dom';
 import '../../static/styles/HomePage.css'; 
 import '../../static/styles/Header.css';
 import '../../static/styles/Intro.css';
@@ -11,7 +12,7 @@ import logoImage from '../../static/images/logo.png';
 const HomePage = ({ title, toggleLoginModal }) => {
     const [isMobileView, setIsMobileView] = useState(window.innerWidth < 850);
     const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 665);
-    const navigate = useNavigate(); // Initialize useNavigate
+    const navigate = useNavigate();
 
     const handleCreateUser = () => navigate('/signup');
     const handleLogin = () => toggleLoginModal();
@@ -42,7 +43,6 @@ const HomePage = ({ title, toggleLoginModal }) => {
                     </ul>
                 </nav>
             </header>
-            
             <section className="intro">
                 <h1>{title}</h1>
                 <p>Welcome to JunkDog Valet Trash Services! We provide professional and efficient trash removal services, your reliable partner in waste management solutions.</p>
@@ -55,7 +55,7 @@ const HomePage = ({ title, toggleLoginModal }) => {
 
 HomePage.propTypes = {
     title: PropTypes.string,
-    toggleLoginModal: PropTypes.func.isRequired
+    toggleLoginModal: PropTypes.func.isRequired,
 };
 
 export default HomePage;
