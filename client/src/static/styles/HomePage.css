@@ -25,4 +25,22 @@
     .intro p {
         font-size: 16px;
     }
+    .header-navigation {
+        display: flex;
+        gap: 15px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .header-link {
+        text-decoration: none;
+        color: #007bff;
+        font-size: 1rem;
+    }
+    
+    .header-link:hover {
+        text-decoration: underline;
+        color: #0056b3;
+    }
 }

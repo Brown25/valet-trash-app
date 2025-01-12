@@ -1,0 +1,40 @@
+.
+├── main
+│   └── java
+│       └── com
+│           └── valettrash
+│               ├── database
+│               │   ├── ReportDatabase.java
+│               │   ├── TaskDatabase.java
+│               │   └── UserDatabase.java
+│               ├── reports
+│               │   ├── Report.java
+│               │   ├── ReportManager.java
+│               │   └── Violation.java
+│               ├── requests
+│               │   ├── LoginRequest.java
+│               │   ├── RegisterRequest.java
+│               │   ├── ReportRequest.java
+│               │   └── TaskRequest.java
+│               ├── server
+│               │   ├── MicroServer.java
+│               │   ├── RequestHandler.java
+│               │   └── WebApplication.java
+│               ├── tasks
+│               │   ├── Task.java
+│               │   ├── TaskManager.java
+│               │   └── TaskScheduler.java
+│               └── user
+│                   ├── Login.java
+│                   ├── User.java
+│                   └── UserManager.java
+├── output.txt
+├── resources
+│   └── schemas
+│       ├── LoginRequest.json
+│       ├── RegisterRequest.json
+│       ├── ReportRequest.json
+│       └── TaskRequest.json
+└── server.txt
+
+13 directories, 25 files

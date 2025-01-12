@@ -9,7 +9,7 @@ const AboutPage = () => {
                 <meta name="description" content="Learn more about JunkDog Valet Trash Services." />
             </Helmet>
             <h1>About Us</h1>
-            <p>At JunkDog Valet Trash Services, we are committed to providing exceptional waste management solutions to our clients.</p>
+            <p>At JunkDog Valet Trash Services, we are committed to providing exceptional waste management solutions to our clients 24/7 !</p>
         </main>
     );
 };

@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet-async'; 
 import { useNavigate } from 'react-router-dom';
-//import  useNavigate  from 'react-router-dom';
 import '../../static/styles/HomePage.css'; 
 import '../../static/styles/Header.css';
 import '../../static/styles/Intro.css';
@@ -10,9 +9,10 @@ import '../../static/styles/Button.css';
 import logoImage from '../../static/images/logo.png';
 
 const HomePage = ({ title, toggleLoginModal }) => {
-    const [isMobileView, setIsMobileView] = useState(window.innerWidth < 850);
+    const [isMobileView, setIsMobileView] = useState(window.innerWidth < 850); 
     const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 665);
     const navigate = useNavigate();
+
 
     const handleCreateUser = () => navigate('/signup');
     const handleLogin = () => toggleLoginModal();
@@ -26,8 +26,8 @@ const HomePage = ({ title, toggleLoginModal }) => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    return (
-        <main aria-label="Home Page Main Content" className="home-page">
+    return ( //define the structure of the ui
+        <main aria-label="Home Page Main Content" className="home-page"> 
             <Helmet>
                 <title>{title || 'Home Page'}</title>
                 <meta name="description" content="Welcome to the Home Page of our Valet Trash App" />
