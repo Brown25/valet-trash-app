@@ -35,7 +35,7 @@ const HomePage = ({ title, toggleLoginModal }) => {
             <header className="home-page-header">
                 <img src={logoImage} height = "400px" alt="JunkDog Logo" className="logo" />
                 <nav>
-                    <ul className="navigation">
+                    <ul className="header-navigation">
                         <li><button className="nav-button" onClick={() => navigate('/')}>Home</button></li>
                         <li><button className="nav-button" onClick={() => navigate('/about')}>About</button></li>
                         <li><button className="nav-button" onClick={() => navigate('/services')}>Services</button></li>
@@ -46,7 +46,7 @@ const HomePage = ({ title, toggleLoginModal }) => {
             <section className="intro">
                 <h1>{title}</h1>
                 <p>Welcome to JunkDog Valet Trash Services! We provide professional and efficient trash removal services, your reliable partner in waste management solutions.</p>
-                <button className="button" onClick={handleCreateUser}>Create New User</button>
+                <button className="button" onClick={handleCreateUser}>Sign up</button>
                 <button className="button" onClick={handleLogin}>Login</button>
             </section>
         </main>

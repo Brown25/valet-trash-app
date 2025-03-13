@@ -54,12 +54,12 @@ html, body {
     }
 }
 
-/* New Styles Integrated from Provided Code */
 .container {
     margin: 0 auto;
     max-width: 940px; 
     padding: 0 10px;
 }
+/* practicing importing a live image*/
 
 .header {
     background: url(https://content.codecademy.com/projects/innovation-cloud/bg.jpg) no-repeat center center; 

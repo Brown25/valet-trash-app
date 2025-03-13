@@ -12,12 +12,19 @@
     height: auto;
 }
 
-.navigation {
-    list-style: none;
+
+
+.header-navigation { /* This is the class that is being used in the HomePage.js file i.e className= line 38 fixed my ul bullet points here */
+    list-style: none; 
     display: flex;
     gap: 15px;
     padding: 0;
     margin: 0;
+}  
+
+
+.navigation li {
+    list-style-type: none; /* Ensures individual list items don’t have bullets */
 }
 
 .nav-button {
