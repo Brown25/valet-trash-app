@@ -9,7 +9,7 @@ import TitlebarAbove from './TitlebarAbove';
 import Home from './pages/Home';
 import About from './pages/Aboutpage';
 import Services from './pages/Servicespage';
-import ContactPage from './ContactPage';
+import ContactPage from './Contactpage';
 
 export default function Page(props) {
     const [serverSettings, processServerConfigSuccess] = useServerSettings(props.showMessage);

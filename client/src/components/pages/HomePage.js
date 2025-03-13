@@ -33,7 +33,7 @@ const HomePage = ({ title, toggleLoginModal }) => {
                 <meta name="description" content="Welcome to the Home Page of our Valet Trash App" />
             </Helmet>
             <header className="home-page-header">
-                <img src={logoImage} alt="JunkDog Logo" className="logo" />
+                <img src={logoImage} height = "400px" alt="JunkDog Logo" className="logo" />
                 <nav>
                     <ul className="navigation">
                         <li><button className="nav-button" onClick={() => navigate('/')}>Home</button></li>
@@ -53,9 +53,5 @@ const HomePage = ({ title, toggleLoginModal }) => {
     );
 };
 
-HomePage.propTypes = {
-    title: PropTypes.string,
-    toggleLoginModal: PropTypes.func.isRequired,
-};
 
 export default HomePage;

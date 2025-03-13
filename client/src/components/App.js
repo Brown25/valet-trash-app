@@ -26,8 +26,7 @@ Key Features:
 	4.	Header Integration:
 	•	The Header is included above the <Routes> component, ensuring it’s visible on every page.
 
-Code Breakdown:
-
+    * @returns {JSX.Element} The rendered App component.
  */
 const App = () => {
     //const setCurrPage = (page) => console.log(`Navigating to page: ${page}`);
